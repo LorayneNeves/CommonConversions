@@ -1,9 +1,20 @@
 ﻿using CommonConversions.Application.Services;
+using CommonConversions.Core.Interfaces;
+using Moq;
 
 namespace CommonConversions.Application.UnitTests.Services;
 
 public class ConversionServiceTests
 {
+
+    private readonly Mock<IConvertHistoryRepository> _repositoryMock;
+    private readonly ConversionService _service;
+    
+    public ConversionServiceTests()
+    {
+        _repositoryMock = new Mock<IConvertHistoryRepository>();
+        _service = new ConversionService(_repositoryMock.Object);
+    }
 
     [Fact]
     public void CelsiusToFahrenheit_ShouldConvertCorrectly()
