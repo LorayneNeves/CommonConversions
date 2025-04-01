@@ -20,11 +20,10 @@ public class ConversionServiceTests
     public void CelsiusToFahrenheit_ShouldConvertCorrectly()
     {
         // Arrange
-        var service = new ConversionService();
         double input = 0;
 
         // Act
-        double result = service.CelsiusToFahrenheit(input);
+        double result = _service.CelsiusToFahrenheit(input);
 
         // Assert
         Assert.Equal(32, result);
@@ -34,10 +33,9 @@ public class ConversionServiceTests
     public void KilometersToMiles_ShouldConvertCorrectly()
     {
         // Arrange
-        var service = new ConversionService();
 
         // Act
-        double result = service.KilometersToMiles(1);
+        double result = _service.KilometersToMiles(1);
 
         // Assert
         Assert.Equal(0.621371, result, 5);
@@ -47,10 +45,9 @@ public class ConversionServiceTests
     public void KilogramsToPounds_ShouldConvertCorrectly()
     {
         // Arrange
-        var service = new ConversionService();
 
         // Act
-        double result = service.KilogramsToPounds(1);
+        double result = _service.KilogramsToPounds(1);
 
         // Assert
         Assert.Equal(2.20462, result, 5);
